@@ -36,6 +36,14 @@ if(pregunta == "si" || pregunta == "Si"){
 else if(pregunta == "no" || pregunta == "No"){
     alert(" Muchas gracias "+nombre+"  por pasar por nuestra tienda. Esperamos la proxima vez nos compre")
 }
+
+let cuestionario = parseInt(prompt("Cuantos años tienes?"))
+if( cuestionario >= 18){
+    alert("Eres mayor de edad, "+nombre+"")
+}
+else if( cuestionario < 18){
+    alert(" "+nombre+", Debes contar con la supervision de un adulto para poder comprar en la web")
+}
 //Fin de la consola interactiva(Preentrega 1)
 
 
