@@ -1,0 +1,15 @@
+* {
+    margin: 0;
+    padding: 0;
+    background-color: rgb(227, 62, 62);
+}
+
+:is(#nombre, #apellido, input, .container){
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+}
+
+

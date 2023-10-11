@@ -1,22 +1,7 @@
-// let num1 = prompt("ingrese un numero");
-// num1 = parseInt(num1);
-
-// let num2 = prompt("ingrese otro numero");
-// num2 = parseInt(num2)
-
-// let suma = num1 + num2;
-
-// console.log("resultado: " + suma);
-
-// alert("Resultado " + suma);
-
-//If//
-
-// Inicio de  la consola interactiva(Preentrega 1)
+// Inicio de  la consola interactiva(Preentrega 2)
 
 let apellido = prompt("Ingresa tu apellido");
 let nombre = prompt("Ingresa tu nombre");
-
 
 let pregunta = prompt("Hola "+nombre+" "+apellido+" , te gustaria comprar en nuestra tienda?")
 
@@ -52,21 +37,4 @@ else if(pregunta.toLowerCase() == "no"){
     alert(" Muchas gracias "+nombre+"  por pasar por nuestra tienda. Esperamos la proxima vez nos compre")
 }
 
-
-//Fin de la consola interactiva(Preentrega 2)
-
-
-// let edad = parseInt(prompt("Ingresa tu edad"))
-// let añoActual = parseInt("2023");
-// let jubilacion = parseInt("65");
-
-// let calculo = jubilacion - edad;
-// let jubilo = añoActual + calculo;
-
-
-// if( edad < 65){
-//     alert("Hola "+nombre+" "+apellido+" Aun te quedan  "+calculo+" años para jubilarte" );
-// }
-// else{
-//     alert("Hola "+nombre+" "+apellido+" ya estas jubilado");
-// }
+let 
