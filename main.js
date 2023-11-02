@@ -1,40 +1,41 @@
 // Inicio de  la consola interactiva(Preentrega 2)
+// preentrega 3
+document.getElementById('userInfoForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    const nombre = document.getElementById('nombre').value;
+    const apellido = document.getElementById('apellido').value;
+    const compra = document.getElementById('compra').value.toLowerCase();
+    
+    if (compra === 'si') {
+        alert(`${nombre} ${apellido}, aquí están todos nuestros productos y precios`);
+        const productos = [
+            { carrito: "Pizza muzzarella", precio: 500 },
+            { carrito: "Pizza pepperoni", precio: 750 },
+            { carrito: "3 piezas de Pollo frito", precio: 300 },
+            { carrito: "Rolls", precio: 200 },
+            { carrito: "2 Pizza muzzarella + Refresco 1lt", precio: 750 },
+            { carrito: "Combo de 5 piezas de Pollo + Refresco 600ml", precio: 650 },
+            { carrito: "2x1 en Pizzas (solo lunes y martes)", precio: 500 },
+            { carrito: "4x3 en Postres", precio: 600 }
+        ];
 
-let apellido = prompt("Ingresa tu apellido");
-let nombre = prompt("Ingresa tu nombre");
+        let listaProductos = productos.map(producto => `${producto.carrito} - $${producto.precio.toFixed(2)}`).join('\n');
 
-let pregunta = prompt("Hola "+nombre+" "+apellido+" , te gustaria comprar en nuestra tienda?")
+        alert("Lista de Productos:\n" + listaProductos);
 
-while(pregunta.toLowerCase() != "si" && pregunta.toLowerCase() != "no"){
-    alert("Debe escribir si o no")
-    pregunta = prompt("Hola "+nombre+" "+apellido+" , te gustaria comprar en nuestra tienda?")  
-}
+        console.log("Lista de Productos:");
+        productos.forEach(producto => {
+            console.log(`${producto.carrito} - $${producto.precio}`);
+        });
+    } else if (compra === 'no') {
+        alert(`Muchas gracias ${nombre} por pasar por nuestra tienda. Esperamos que la próxima vez compres con nosotros.`);
+    } else {
+        alert("Debe escribir 'si' o 'no'");
+    }
+});
+//preentrega
 
-if(pregunta.toLowerCase() == "si"){
-    alert(""+nombre+", Aca estan todos nuestros productos y nuestros precios")
-    const productos = [
-        { carrito: "Pizza muzzarella", precio: 500},
-        { carrito: "Pizza pepperoni", precio: 750},
-        { carrito: "3 piezas de Pollo frito", precio: 300},
-        { carrito: "Rolls", precio: 200},
-        { carrito: "2 Pizza muzzarela + Refresco 1lt", precio: 750},
-        { carrito: "Combo de 5 piezas de Pollo + Refresco 600ml", precio: 650},
-        {carrito: "2x1 en Pizzas(solo lunes y martes", precio: 500},
-        {carrito: "4x3 en Postres", precio: 600}
-    ];
+//actividad
 
-    let listaProductos = productos.map(producto => `${producto.carrito} - $${producto.precio.toFixed(2)}`).join('\n');
 
-    // La lista en un alert
-    alert("Lista de Productos:\n" + listaProductos);
-    // La lista en la consola
-     console.log("Lista de Productos:");
-        productos.forEach(function(producto) {
-            console.log(`${producto.carrito} - $${producto.precio}`);});
-}    
-
-else if(pregunta.toLowerCase() == "no"){
-    alert(" Muchas gracias "+nombre+"  por pasar por nuestra tienda. Esperamos la proxima vez nos compre")
-}
-
-let 

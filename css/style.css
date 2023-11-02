@@ -1,11 +1,11 @@
 * {
     margin: 0;
     padding: 0;
-    background-color: rgb(227, 62, 62);
+    background-color: rgb(255, 255, 255);
 }
 
-:is(#nombre, #apellido, input, .container){
-    width: 100%;
+:is(#nombre, #apellido, #compra, input){
+    width: 20%;
     display: flex;
     justify-content: center;
     align-items: center;
