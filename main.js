@@ -29,7 +29,7 @@ document.getElementById('userInfoForm').addEventListener('submit', function(e) {
             console.log(`${producto.carrito} - $${producto.precio}`);
         });
     } else if (compra === 'no') {
-        alert(`Muchas gracias ${nombre} por pasar por nuestra tienda. Esperamos que la próxima vez compres con nosotros.`);
+        alert(`Muchas gracias ${nombre} ${apellido} por pasar por nuestra tienda. Esperamos que la próxima vez compres con nosotros.`);
     } else {
         alert("Debe escribir 'si' o 'no'");
     }
