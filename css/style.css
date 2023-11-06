@@ -4,6 +4,12 @@
     background-color: rgb(255, 255, 255);
 }
 
+#userInfoForm{
+    margin: 20px;
+    padding: 20px;
+
+}
+
 :is(#nombre, #apellido, #compra, #userInfoForm){
     width: 100%;
     display: flex;
@@ -14,9 +20,36 @@
 }
 
 label{
+    margin-bottom: 10px;
     font-size: 20px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
+.texto {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.boton1 {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.alert {
+        background-color: #f2f2f2;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        text-align: center;
+    }
 
 
 
