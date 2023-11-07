@@ -1,6 +1,6 @@
 // Inicio de  la consola interactiva(Preentrega 2)
 // preentrega 3
-const formulario = document.getElementById('userInfoForm');
+const formulario = document.getElementById('formUser');
 formulario.addEventListener('submit', function(e) {
     e.preventDefault();
     

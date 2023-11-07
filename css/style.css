@@ -4,13 +4,13 @@
     background-color: rgb(255, 255, 255);
 }
 
-#userInfoForm{
+#formUser{
     margin: 20px;
     padding: 20px;
 
 }
 
-:is(#nombre, #apellido, #compra, #userInfoForm){
+:is(#nombre, #apellido, #compra, #formUser){
     width: 100%;
     display: flex;
     flex-direction: column;
