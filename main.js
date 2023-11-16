@@ -17,8 +17,7 @@ formulario.addEventListener('submit', function(e) {
         { carrito: "2x1 en Pizzas (solo lunes y martes)", precio: 500 },
         { carrito: "4x3 en Postres", precio: 600 }
     ];
-
-    const listaProductos = productos.map(producto => `${producto.carrito} - $${producto.precio.toFixed(2)}`).join('\n');
+      const listaProductos = productos.map(producto => `${producto.carrito} - $${producto.precio.toFixed(2)}`).join('\n');
 
     // Info del usuario
     const usuarioId = `${nombre}-${apellido}`;
@@ -61,6 +60,4 @@ formulario.addEventListener('submit', function(e) {
     } else {
         swal("Error", "Debe escribir 'si' o 'no'", "error");
     }
-});
-
-
+  })
