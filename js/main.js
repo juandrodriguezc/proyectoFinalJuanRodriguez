@@ -11,16 +11,7 @@ formulario.addEventListener('submit', function(e) {
 fetch('./js/productos.json')
         .then(response => response.json())
         .then(productos => {
-    // const productos = [
-    //     { carrito: "Pizza muzzarella", precio: 500 },
-    //     { carrito: "Pizza pepperoni", precio: 750 },
-    //     { carrito: "3 piezas de Pollo frito", precio: 300 },
-    //     { carrito: "Rolls", precio: 200 },
-    //     { carrito: "2 Pizza muzzarella + Refresco 1lt", precio: 750 },
-    //     { carrito: "Combo de 5 piezas de Pollo + Refresco 600ml", precio: 650 },
-    //     { carrito: "2x1 en Pizzas (solo lunes y martes)", precio: 500 },
-    //     { carrito: "4x3 en Postres", precio: 600 }
-    // ];
+            
       const listaProductos = productos.map(producto => `${producto.carrito} - $${producto.precio.toFixed(2)}`).join('\n');
 
     // Info del usuario
