@@ -1,4 +1,5 @@
 // Proyecto final
+
 const formulario = document.getElementById('formUser');
 formulario.addEventListener('submit', function(e) {
     e.preventDefault();
@@ -7,16 +8,19 @@ formulario.addEventListener('submit', function(e) {
     const apellido = document.getElementById('apellido').value;
     const compra = document.getElementById('compra').value.toLowerCase();
 //Productos
-    const productos = [
-        { carrito: "Pizza muzzarella", precio: 500 },
-        { carrito: "Pizza pepperoni", precio: 750 },
-        { carrito: "3 piezas de Pollo frito", precio: 300 },
-        { carrito: "Rolls", precio: 200 },
-        { carrito: "2 Pizza muzzarella + Refresco 1lt", precio: 750 },
-        { carrito: "Combo de 5 piezas de Pollo + Refresco 600ml", precio: 650 },
-        { carrito: "2x1 en Pizzas (solo lunes y martes)", precio: 500 },
-        { carrito: "4x3 en Postres", precio: 600 }
-    ];
+fetch('./js/productos.json')
+        .then(response => response.json())
+        .then(productos => {
+    // const productos = [
+    //     { carrito: "Pizza muzzarella", precio: 500 },
+    //     { carrito: "Pizza pepperoni", precio: 750 },
+    //     { carrito: "3 piezas de Pollo frito", precio: 300 },
+    //     { carrito: "Rolls", precio: 200 },
+    //     { carrito: "2 Pizza muzzarella + Refresco 1lt", precio: 750 },
+    //     { carrito: "Combo de 5 piezas de Pollo + Refresco 600ml", precio: 650 },
+    //     { carrito: "2x1 en Pizzas (solo lunes y martes)", precio: 500 },
+    //     { carrito: "4x3 en Postres", precio: 600 }
+    // ];
       const listaProductos = productos.map(producto => `${producto.carrito} - $${producto.precio.toFixed(2)}`).join('\n');
 
     // Info del usuario
@@ -30,10 +34,10 @@ formulario.addEventListener('submit', function(e) {
     //En caso de que el usuario escriba ¨si¨
     if (compra === 'si') {
         // Mostrar la lista de productos utilizando SweetAlert
-        swal({
+        swal.fire({
             title: "Productos en el Carrito",
             text: `¡Gracias, ${nombre} ${apellido}! Aquí está la lista de productos y precios:\n\n${listaProductos}`,
-            icon: "info",
+            icon: "success",
             button: "OK",
         });
 
@@ -46,7 +50,7 @@ formulario.addEventListener('submit', function(e) {
     //En caso de que el usuario escriba ¨no¨
     } else if (compra === 'no') {
         
-        swal({
+        swal.fire({
             title: "Gracias por visitarnos",
             text: `Muchas gracias, ${nombre} ${apellido} por pasar por nuestra tienda. Esperamos que la próxima vez compres con nosotros.`,
             icon: "info",
@@ -58,6 +62,12 @@ formulario.addEventListener('submit', function(e) {
         formulario.reset();
         //En caso de que el usuario no escriba ni ¨si¨ ni ¨no¨
     } else {
-        swal("Error", "Debe escribir 'si' o 'no'", "error");
+        swal.fire("Error", "Debe escribir 'si' o 'no'", "error");
     }
-  })
+
+})
+.catch(error => {
+    console.error('Error al obtener los productos:', error);
+    swal.fire("Error", "Hubo un problema al cargar los productos. Por favor, inténtalo de nuevo más tarde.", "error");
+});
+});
